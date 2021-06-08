@@ -21,13 +21,14 @@ class _MyHomePageState extends State<MyHomePage> {
         Container(
           height: 50,
         ),Icon(Icons.wheelchair_pickup,size: 120,color: Color(0xff01A0C6), ),
-        langText('Arabic'),
+        langText(r'إختار اللغة'),
         langText('Choose Language'),
         Container(
           height: 10,
         ),
-        langButton('Arabic', context),
-        langButton('English', context),
+        langButton(r'العربية'),
+        langButton('English'),
+        langButton(r'Español'),
         Container(
           margin: EdgeInsets.only(bottom: 10),
           alignment: Alignment.bottomCenter,
@@ -48,7 +49,7 @@ Widget langText(String value){
           value,
           style: TextStyle(
               fontSize: 30,
-              fontFamily: 'Helvetica Neue',
+              fontFamily: 'Pragmatica',
               color: Color(0xff616668),
               fontWeight: FontWeight.bold),
         );
