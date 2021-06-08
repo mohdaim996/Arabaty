@@ -26,8 +26,8 @@ class _MyHomePageState extends State<MyHomePage> {
         Container(
           height: 10,
         ),
-        langButton('Arabic'),
-        langButton('English'),
+        langButton('Arabic', context),
+        langButton('English', context),
         Container(
           margin: EdgeInsets.only(bottom: 10),
           alignment: Alignment.bottomCenter,
@@ -54,9 +54,9 @@ Widget langText(String value){
         );
 }
 
-Widget langButton(String value){
+Widget langButton(String value, context){
   return OutlinedButton(
-          onPressed: () {},
+          onPressed: () => Navigator.pushNamed(context, '/login'),
           child: Container(
             child: Center(
                 child: Text(

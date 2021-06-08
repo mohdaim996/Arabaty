@@ -15,3 +15,19 @@ class _PaymentState extends State<Payment> {
     );
   }
 }
+
+class CardInfo extends StatefulWidget {
+  const CardInfo({ Key? key }) : super(key: key);
+
+  @override
+  _CardInfoState createState() => _CardInfoState();
+}
+
+class _CardInfoState extends State<CardInfo> {
+  @override
+  Widget build(BuildContext context) {
+    return Container(
+      
+    );
+  }
+}
