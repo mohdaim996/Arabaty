@@ -26,9 +26,9 @@ class _MyHomePageState extends State<MyHomePage> {
         Container(
           height: 10,
         ),
-        langButton(r'العربية'),
-        langButton('English'),
-        langButton(r'Español'),
+        langButton(r'العربية',context),
+        langButton('English',context),
+        langButton(r'Español',context),
         Container(
           margin: EdgeInsets.only(bottom: 10),
           alignment: Alignment.bottomCenter,
