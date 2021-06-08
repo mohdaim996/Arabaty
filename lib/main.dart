@@ -14,7 +14,7 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       routes: <String, WidgetBuilder>{
-        '/home': (BuildContext context) => new MyHomePage(title: 'Arabaty'),
+        '/home': (BuildContext context) => new MyHomePage(title: r'Arabty'),
         '/barCodeReader': (BuildContext context) => new BarCodeReader(),
         '/reserve': (BuildContext context) => new Reserve(),
         '/payment': (BuildContext context) => new Payment(),
@@ -25,7 +25,7 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         primarySwatch: Colors.blue,
       ),
-      home: MyHomePage(title: 'Arabaty'),
+      home: MyHomePage(title: r'عربتي'),
     );
   }
 }
