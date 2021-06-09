@@ -30,8 +30,8 @@ class _LoginState extends State<Login> {
                 icon: Icon(Icons.phone),
                 hintText: '05',
                 labelText: 'رقم الجوال الخاص بك *')),padding: EdgeInsets.all(30) ,),
-                Padding(child: home.langButton("التسجيل الآن", context,),padding: EdgeInsets.all(5),),
-              Padding(child: home.langButton("إنشاء حساب", context),padding: EdgeInsets.only(top:250)), 
+                Padding(child: logButton("التسجيل الآن", context,),padding: EdgeInsets.all(5),),
+              Padding(child: newuserButton("إنشاء حساب", context),padding: EdgeInsets.only(top:250),), 
               Container(
           margin: EdgeInsets.only(bottom: 10),
           alignment: Alignment.bottomCenter,
@@ -48,4 +48,40 @@ class _LoginState extends State<Login> {
       ),
     );
   }
+}
+Widget logButton(String value, context){
+  return OutlinedButton(
+          onPressed: () => Navigator.pushNamed(context, '/register'),
+          child: Container(
+            child: Center(
+                child: Text(
+              value,
+              style: TextStyle(color: Colors.white, fontSize: 30),
+            )),
+            width: 250,
+            height: 75,
+          ),
+          style: OutlinedButton.styleFrom(
+              backgroundColor: Color(0xff01A0C6),
+              shape: RoundedRectangleBorder(
+                  borderRadius: BorderRadius.circular(50.0))),
+        );
+}
+Widget newuserButton(String value, context){
+  return OutlinedButton(
+          onPressed: () => Navigator.pushNamed(context, '/reserve'),
+          child: Container(
+            child: Center(
+                child: Text(
+              value,
+              style: TextStyle(color: Colors.white, fontSize: 30),
+            )),
+            width: 250,
+            height: 75,
+          ),
+          style: OutlinedButton.styleFrom(
+              backgroundColor: Color(0xff01A0C6),
+              shape: RoundedRectangleBorder(
+                  borderRadius: BorderRadius.circular(50.0))),
+        );
 }
