@@ -7,9 +7,14 @@ import 'package:arabaty/register.dart';
 import 'package:arabaty/reserve.dart';
 import 'package:flutter/material.dart';
 import 'homePage.dart';
+import 'package:geolocator/geolocator.dart';
 
-void main() {
+dynamic userPositon;
+void main(List<String> args) async {
+  
   runApp(MyApp());
+  userPositon = await Geolocator.getCurrentPosition();
+  print(userPositon);
 }
 
 class MyApp extends StatelessWidget {
