@@ -1,9 +1,9 @@
-import 'dart:async';
+import 'dart:async' as async;
 import 'package:flutter/material.dart';
 import 'package:flutter_map/flutter_map.dart';
 import "package:latlong2/latlong.dart";
 import 'package:user_location/user_location.dart';
-import 'homePage.dart' as home;
+
 
 class MapView extends StatefulWidget {
   const MapView({Key? key}) : super(key: key);
@@ -85,7 +85,7 @@ class _MapViewState extends State<MapView> {
               )),
           Padding(
             padding: EdgeInsets.symmetric(vertical: 20),
-            child: home.langButton("التالي", context,'/'),
+            child: payButton("التالي", context,),
           ),
           Padding(
             child: Container(
@@ -97,9 +97,28 @@ class _MapViewState extends State<MapView> {
               ),
               height: 200,
             ),
-            padding: EdgeInsets.only(top: 80),
+            padding: EdgeInsets.only(top: 55),
           )
         ])));
   }
+}
+
+Widget payButton(String value, context){
+  return OutlinedButton(
+          onPressed: () => Navigator.pushNamed(context,'/payment'),
+          child: Container(
+            child: Center(
+                child: Text(
+              value,
+              style: TextStyle(color: Colors.white, fontSize: 30),
+            )),
+            width: 250,
+            height: 75,
+          ),
+          style: OutlinedButton.styleFrom(
+              backgroundColor: Color(0xff01A0C6),
+              shape: RoundedRectangleBorder(
+                  borderRadius: BorderRadius.circular(50.0))),
+        );
 }
 //sk.eyJ1IjoibW9oZGFpbTk5NiIsImEiOiJja3BvaGMxdWYwbThxMnZudWxpd2F1NmthIn0.BSiDsjx9T4hl0FFgbZGLCQ

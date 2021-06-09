@@ -1,6 +1,7 @@
 import 'package:arabaty/barCodeReader.dart';
 import 'package:arabaty/cartInfo.dart';
 import 'package:arabaty/login.dart';
+import 'package:arabaty/payinfo.dart';
 import 'package:arabaty/maps.dart';
 import 'package:arabaty/payment.dart';
 import 'package:arabaty/register.dart';
@@ -21,6 +22,7 @@ class MyApp extends StatelessWidget {
         '/barCodeReader': (BuildContext context) => new BarCodeReader(),
         '/ceck': (BuildContext context) => new ceck(),
         '/payment': (BuildContext context) => new Payment(),
+        '/payinfo': (BuildContext context) => new Payinfo(),
         '/login': (BuildContext context) => new Login(),
         '/register': (BuildContext context) => new Register(),
         '/maps': (BuildContext context) => new MapView(),

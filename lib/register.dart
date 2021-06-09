@@ -32,7 +32,7 @@ class _RegisterState extends State<Register> {
                 hintText: '- - - -',
                 labelText: 'رمز التحقق *')),padding: EdgeInsets.all(30) ,),
                 Padding(child: home.langButton("تأكيد الرمز", context,'/maps'),padding: EdgeInsets.all(5),),
-              Padding(child: home.langButton("إعادة إرسال الرمز", context,'/'),padding: EdgeInsets.all(5)), 
+              Padding(child: home.langButton("إعادة إرسال الرمز", context,'/register'),padding: EdgeInsets.all(5)), 
               Padding (child: Container(
           margin: EdgeInsets.only(bottom: 10),
           alignment: Alignment.bottomCenter,
@@ -40,7 +40,7 @@ class _RegisterState extends State<Register> {
           style: TextStyle(fontWeight: FontWeight.bold,fontSize: 25),
         ),
           height: 200,
-        ),padding: EdgeInsets.only(top:240),)
+        ),padding: EdgeInsets.only(top:205),)
             //input form field 2,
             //login button,
             //creat account

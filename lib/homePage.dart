@@ -26,7 +26,7 @@ class _MyHomePageState extends State<MyHomePage> {
         Container(
           height: 10,
         ),
-        langButton(r'العربية',context,'/login'),
+        langButton('العربية',context,'/login'),
         langButton('English',context, '/login'),
         langButton(r'Español',context,'/login'),
         Container(

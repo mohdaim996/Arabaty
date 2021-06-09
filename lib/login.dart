@@ -31,10 +31,9 @@ class _LoginState extends State<Login> {
                 icon: Icon(Icons.phone),
                 hintText: '05',
                 labelText: 'رقم الجوال الخاص بك *')),padding: EdgeInsets.all(30) ,),
-                Padding(child: home.langButton("التسجيل الآن", context,'/maps'),padding: EdgeInsets.all(5),),
-              Padding(child: home.langButton("إنشاء حساب", context,'/register'),padding: EdgeInsets.only(bottom:200)), 
+                Padding(child: home.langButton("التسجيل الآن", context,'/register'),padding: EdgeInsets.all(5),),
+              Padding(child: newuserButton("إنشاء حساب", context),padding: EdgeInsets.only(bottom:200)), 
               Container(
-          margin: EdgeInsets.only(bottom: 10),
           alignment: Alignment.bottomCenter,
           child:  Text("عربتي",
           style: TextStyle(fontWeight: FontWeight.bold,fontSize: 25),
@@ -70,7 +69,7 @@ Widget logButton(String value, context){
 }
 Widget newuserButton(String value, context){
   return OutlinedButton(
-          onPressed: () => Navigator.pushNamed(context, '/reserve'),
+          onPressed: () => Navigator.pushNamed(context, '/ceck'),
           child: Container(
             child: Center(
                 child: Text(

@@ -46,7 +46,7 @@ class _PaymentState extends State<Payinfo> {
              Padding(child: TextFormField(
                 decoration: const InputDecoration(
                 icon: Icon(Icons.format_list_numbered),
-                hintText: '---',
+                hintText: '- - -',
                 labelText: 'ccv *')),padding: EdgeInsets.all(30) ,),
                 Padding(child: login.logButton("الدفع", context,),padding: EdgeInsets.all(5),),
               Padding (child: Container(
