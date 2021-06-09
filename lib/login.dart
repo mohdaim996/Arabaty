@@ -12,26 +12,27 @@ class _LoginState extends State<Login> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      appBar: AppBar(),
       body: Center(
         child: Column(
           children: [
-            Container(
-              child: Text(r"تسجيل الدخول"),
+            Padding(padding: EdgeInsets.symmetric(vertical: 20),child: Container(
+              child: Text(r"سجل الدخول هنا"),
               alignment: Alignment.center,
               decoration: BoxDecoration(
                   color: Colors.grey,
                   borderRadius: BorderRadius.circular(50.0)),
-              height: 50,
+              
               width: 100,
-            ),
+            ),),
              Text(r"أدخل رقم الجوال"),
              Padding(child: TextFormField(
                 decoration: const InputDecoration(
                 icon: Icon(Icons.phone),
                 hintText: '05',
                 labelText: 'رقم الجوال الخاص بك *')),padding: EdgeInsets.all(30) ,),
-                Padding(child: home.langButton("التسجيل الآن", context,),padding: EdgeInsets.all(5),),
-              Padding(child: home.langButton("إنشاء حساب", context),padding: EdgeInsets.only(top:250)), 
+                Padding(child: home.langButton("التسجيل الآن", context,'/maps'),padding: EdgeInsets.all(5),),
+              Padding(child: home.langButton("إنشاء حساب", context,'/register'),padding: EdgeInsets.only(bottom:200)), 
               Container(
           margin: EdgeInsets.only(bottom: 10),
           alignment: Alignment.bottomCenter,

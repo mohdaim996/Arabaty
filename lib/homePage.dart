@@ -26,9 +26,9 @@ class _MyHomePageState extends State<MyHomePage> {
         Container(
           height: 10,
         ),
-        langButton(r'العربية',context),
-        langButton('English',context),
-        langButton(r'Español',context),
+        langButton(r'العربية',context,'/login'),
+        langButton('English',context, '/login'),
+        langButton(r'Español',context,'/login'),
         Container(
           margin: EdgeInsets.only(bottom: 10),
           alignment: Alignment.bottomCenter,
@@ -55,9 +55,9 @@ Widget langText(String value){
         );
 }
 
-Widget langButton(String value, context){
+Widget langButton(String value, context,String path){
   return OutlinedButton(
-          onPressed: () => Navigator.pushNamed(context, '/maps'),
+          onPressed: () => Navigator.pushNamed(context, path),
           child: Container(
             child: Center(
                 child: Text(

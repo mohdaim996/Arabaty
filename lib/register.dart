@@ -12,6 +12,7 @@ class _RegisterState extends State<Register> {
   @override
   Widget build(BuildContext context) {
     return  Scaffold(
+      appBar: AppBar(),
       body: Center(
         child: Column(
           children: [
@@ -21,7 +22,7 @@ class _RegisterState extends State<Register> {
               decoration: BoxDecoration(
                   color: Colors.grey,
                   borderRadius: BorderRadius.circular(50.0)),
-              height: 50,
+              
               width: 100,
             ),
              Text(r"الرجاء إدخال رمز التحقق"),
@@ -30,8 +31,8 @@ class _RegisterState extends State<Register> {
                 icon: Icon(Icons.looks_4_sharp),
                 hintText: '- - - -',
                 labelText: 'رمز التحقق *')),padding: EdgeInsets.all(30) ,),
-                Padding(child: home.langButton("تأكيد الرمز", context,),padding: EdgeInsets.all(5),),
-              Padding(child: home.langButton("إعادة إرسال الرمز", context),padding: EdgeInsets.all(5)), 
+                Padding(child: home.langButton("تأكيد الرمز", context,'/maps'),padding: EdgeInsets.all(5),),
+              Padding(child: home.langButton("إعادة إرسال الرمز", context,'/'),padding: EdgeInsets.all(5)), 
               Padding (child: Container(
           margin: EdgeInsets.only(bottom: 10),
           alignment: Alignment.bottomCenter,
