@@ -4,7 +4,7 @@ import 'package:arabaty/login.dart';
 import 'package:arabaty/maps.dart';
 import 'package:arabaty/payment.dart';
 import 'package:arabaty/register.dart';
-import 'package:arabaty/reserve.dart';
+import 'package:arabaty/ceck.dart';
 import 'package:flutter/material.dart';
 import 'homePage.dart';
 import 'package:geolocator/geolocator.dart';
@@ -24,7 +24,7 @@ class MyApp extends StatelessWidget {
       routes: <String, WidgetBuilder>{
         '/home': (BuildContext context) => new MyHomePage(title: r'Arabty'),
         '/barCodeReader': (BuildContext context) => new BarCodeReader(),
-        '/reserve': (BuildContext context) => new Reserve(),
+        '/ceck': (BuildContext context) => new ceck(),
         '/payment': (BuildContext context) => new Payment(),
         '/login': (BuildContext context) => new Login(),
         '/register': (BuildContext context) => new Register(),

@@ -50,3 +50,39 @@ class _LoginState extends State<Login> {
     );
   }
 }
+Widget logButton(String value, context){
+  return OutlinedButton(
+          onPressed: () => Navigator.pushNamed(context, '/register'),
+          child: Container(
+            child: Center(
+                child: Text(
+              value,
+              style: TextStyle(color: Colors.white, fontSize: 30),
+            )),
+            width: 250,
+            height: 75,
+          ),
+          style: OutlinedButton.styleFrom(
+              backgroundColor: Color(0xff01A0C6),
+              shape: RoundedRectangleBorder(
+                  borderRadius: BorderRadius.circular(50.0))),
+        );
+}
+Widget newuserButton(String value, context){
+  return OutlinedButton(
+          onPressed: () => Navigator.pushNamed(context, '/reserve'),
+          child: Container(
+            child: Center(
+                child: Text(
+              value,
+              style: TextStyle(color: Colors.white, fontSize: 30),
+            )),
+            width: 250,
+            height: 75,
+          ),
+          style: OutlinedButton.styleFrom(
+              backgroundColor: Color(0xff01A0C6),
+              shape: RoundedRectangleBorder(
+                  borderRadius: BorderRadius.circular(50.0))),
+        );
+}
