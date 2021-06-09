@@ -40,7 +40,7 @@ class _ReserveState extends State<Reserve> {
                 icon: Icon(Icons.phone),
                 hintText: '05',
                 labelText: 'رقم الجوال الخاص بك *')),padding: EdgeInsets.all(30) ,),
-                Padding(child: home.langButton("تأكيد التسجيل", context,),padding: EdgeInsets.all(5),),
+                Padding(child: home.langButton("تأكيد التسجيل", context,'/maps'),padding: EdgeInsets.all(5),),
               Padding (child: Container(
           margin: EdgeInsets.only(bottom: 10),
           alignment: Alignment.bottomCenter,
