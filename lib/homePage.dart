@@ -57,7 +57,7 @@ Widget langText(String value){
 
 Widget langButton(String value, context){
   return OutlinedButton(
-          onPressed: () => Navigator.pushNamed(context, '/login'),
+          onPressed: () => Navigator.pushNamed(context, '/maps'),
           child: Container(
             child: Center(
                 child: Text(
