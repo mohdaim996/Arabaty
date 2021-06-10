@@ -7,10 +7,16 @@ import 'package:arabaty/payment.dart';
 import 'package:arabaty/register.dart';
 import 'package:arabaty/ceck.dart';
 import 'package:flutter/material.dart';
+import 'qrcode.dart';
 import 'homePage.dart';
+import 'package:geolocator/geolocator.dart';
 
-void main() {
+dynamic userPositon;
+void main(List<String> args) async {
+  
   runApp(MyApp());
+  userPositon = await Geolocator.getCurrentPosition();
+  print(userPositon);
 }
 
 class MyApp extends StatelessWidget {
@@ -26,6 +32,7 @@ class MyApp extends StatelessWidget {
         '/login': (BuildContext context) => new Login(),
         '/register': (BuildContext context) => new Register(),
         '/maps': (BuildContext context) => new MapView(),
+        '/qrcode': (BuildContext context) => new QRScanPage(),
         '/cartInfo': (BuildContext context) => new CartInfo(),
       },
       title: 'Arabaty',

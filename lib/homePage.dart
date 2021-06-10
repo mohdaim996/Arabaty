@@ -28,7 +28,7 @@ class _MyHomePageState extends State<MyHomePage> {
         ),
         langButton('العربية',context,'/login'),
         langButton('English',context, '/login'),
-        langButton(r'Español',context,'/login'),
+        testqr(r'Español',context,'/qrcode'),
         Container(
           margin: EdgeInsets.only(bottom: 10),
           alignment: Alignment.bottomCenter,
@@ -56,6 +56,24 @@ Widget langText(String value){
 }
 
 Widget langButton(String value, context,String path){
+  return OutlinedButton(
+          onPressed: () => Navigator.pushNamed(context, path),
+          child: Container(
+            child: Center(
+                child: Text(
+              value,
+              style: TextStyle(color: Colors.white, fontSize: 30),
+            )),
+            width: 250,
+            height: 75,
+          ),
+          style: OutlinedButton.styleFrom(
+              backgroundColor: Color(0xff01A0C6),
+              shape: RoundedRectangleBorder(
+                  borderRadius: BorderRadius.circular(50.0))),
+        );
+}
+Widget testqr(String value, context,String path){
   return OutlinedButton(
           onPressed: () => Navigator.pushNamed(context, path),
           child: Container(

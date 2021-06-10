@@ -2,8 +2,10 @@ import 'dart:async' as async;
 import 'package:flutter/material.dart';
 import 'package:flutter_map/flutter_map.dart';
 import "package:latlong2/latlong.dart";
-import 'package:user_location/user_location.dart';
-
+import 'homePage.dart' as home;
+import 'package:geolocator/geolocator.dart' as test;
+import 'main.dart' as main;
+import 'dart:math';
 
 class MapView extends StatefulWidget {
   const MapView({Key? key}) : super(key: key);
@@ -17,89 +19,82 @@ class _MapViewState extends State<MapView> {
   dynamic userLocationOptions;
   // ADD THIS
   List<Marker> markers = [];
+  double doubleInRange(num start, num end) =>
+      Random().nextDouble() * (end - start) + start;
   @override
   Widget build(BuildContext context) {
-    userLocationOptions = UserLocationOptions(
-      context: context,
-      mapController: mapController,
-      markers: markers,
-    );
+    print(main.userPositon);
     return Scaffold(
         appBar: AppBar(),
         body: Center(
-            child: Column(children: [
-          Padding(
-            padding: EdgeInsets.symmetric(vertical: 20),
-            child: Container(
-              child: Text(r"المحطات المتوفرة"),
-              alignment: Alignment.center,
-              decoration: BoxDecoration(
-                  color: Colors.grey,
-                  borderRadius: BorderRadius.circular(50.0)),
-              width: 150,
-            ),
-          ),
-          Container(
-              decoration:
-                  BoxDecoration(border: Border.all(color: Colors.black)),
-              width: 300,
-              height: 300,
-              child: FlutterMap(
-                options: MapOptions(
-                  center: LatLng(21.85553, 39.06006),
-                  zoom: 13.0,
-                ),
-                layers: [
-                  TileLayerOptions(
-                      urlTemplate:
-                          "https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png",
-                      subdomains: ['a', 'b', 'c']),
-                  MarkerLayerOptions(
-                    markers: [
-                      Marker(
-                        width: 80.0,
-                        height: 80.0,
-                        point: LatLng(21.85708, 39.06072),
-                        builder: (ctx) => Container(
-                          child: Icon(Icons.pin_drop),
-                        ),
-                      ), Marker(
-                        width: 80.0,
-                        height: 80.0,
-                        point: LatLng(21.85218, 39.06010),
-                        builder: (ctx) => Container(
-                          child: Icon(Icons.pin_drop),
-                        ),
-                      ),
-                      Marker(
-                        width: 80.0,
-                        height: 80.0,
-                        point: LatLng(21.85924, 39.05786),
-                        builder: (ctx) => Container(
-                          child: Icon(Icons.pin_drop),
-                        ),
-                      )
-                    ],
-                  ),
-                ],
-              )),
-          Padding(
-            padding: EdgeInsets.symmetric(vertical: 20),
-            child: payButton("التالي", context,),
-          ),
-          Padding(
-            child: Container(
-              margin: EdgeInsets.only(bottom: 10),
-              alignment: Alignment.bottomCenter,
-              child: Text(
-                "عربتي",
-                style: TextStyle(fontWeight: FontWeight.bold, fontSize: 25),
+            child: Stack(
+          children: [
+            FlutterMap(
+              options: MapOptions(
+                center: LatLng(
+                    main.userPositon.latitude, main.userPositon.longitude),
+                zoom: 12.5,
               ),
-              height: 200,
+              layers: [
+                TileLayerOptions(
+                    urlTemplate:
+                        "https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png",
+                    subdomains: ['a', 'b', 'c']),
+                MarkerLayerOptions(
+                  markers: [
+                    Marker(
+                      width: 80.0,
+                      height: 80.0,
+                      point: LatLng(
+                          (main.userPositon.latitude + doubleInRange(0, 0.0399999)),
+                          (main.userPositon.longitude + doubleInRange(0, 0.0399999))),
+                      builder: (ctx) => Container(
+                        child: Icon(Icons.pin_drop),
+                      ),
+                    ),
+                    Marker(
+                      width: 80.0,
+                      height: 80.0,
+                      point: LatLng((main.userPositon.latitude + doubleInRange(0, 0.0399999)),
+                          (main.userPositon.longitude + doubleInRange(0, 0.0399999))),
+                      builder: (ctx) => Container(
+                        child: Icon(Icons.pin_drop),
+                      ),
+                    ),
+                    Marker(
+                      width: 80.0,
+                      height: 80.0,
+                      point: LatLng((main.userPositon.latitude + doubleInRange(0, 0.0399999)),
+                          (main.userPositon.longitude + doubleInRange(0, 0.0399999))),
+                      builder: (ctx) => Container(
+                        child: Icon(Icons.pin_drop),
+                      ),
+                    )
+                  ],
+                ),
+              ],
             ),
-            padding: EdgeInsets.only(top: 55),
-          )
-        ])));
+            Positioned(
+                child: Padding(
+                  padding: EdgeInsets.symmetric(vertical: 20),
+                  child: Container(
+                    child: Text(r"المحطات المتوفرة"),
+                    alignment: Alignment.center,
+                    decoration: BoxDecoration(
+                        color: Colors.grey,
+                        borderRadius: BorderRadius.circular(50.0)),
+                    height: 30,
+                    width: 120,
+                  ),
+                ),
+                top: 20,
+                left: ((MediaQuery.of(context).size.width) / 2) - 60),
+            Positioned(
+                child: home.langButton('التالي', context, '/payment'),
+                bottom: 20,
+                left: ((MediaQuery.of(context).size.width) / 2) - 133),
+          ],
+        )));
   }
 }
 
