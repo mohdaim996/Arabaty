@@ -1,5 +1,6 @@
 import 'package:arabaty/barCodeReader.dart';
 import 'package:arabaty/cartInfo.dart';
+import 'package:arabaty/qrcode.dart';
 import 'package:arabaty/login.dart';
 import 'package:arabaty/payinfo.dart';
 import 'package:arabaty/maps.dart';

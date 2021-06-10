@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_barcode_scanner/flutter_barcode_scanner.dart';
 
-import '../main.dart';
 
 class QRScanPage extends StatefulWidget {
   @override
@@ -66,5 +65,5 @@ class _QRScanPageState extends State<QRScanPage> {
                   }
                 }
               
-                ButtonWidget({String? text, Future<void> Function()? onClicked}) {}
+               // ButtonWidget({String? text, Future<void> Function()? onClicked}) {}
 }
