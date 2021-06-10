@@ -12,7 +12,8 @@ class _LoginState extends State<Login> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(),
+      appBar: AppBar(title: Text("سجل الدخول هنا"),
+),
       body: Center(
         child: Column(
           children: [

@@ -11,7 +11,7 @@ class _RentHoursState extends State<RentHours> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(),
+      appBar: AppBar(title: Text("تحديد وقت الإستخدام")),
       body: Center(
         child: Column(
           children: [

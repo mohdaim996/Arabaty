@@ -13,7 +13,7 @@ class _ceckState extends State<ceck> {
   @override
   Widget build(BuildContext context) {
     return  Scaffold(
-      appBar: AppBar(),
+      appBar: AppBar(title: Text("تسجيل مستخدم جديد")),
       body: Center(
         child: Column(
           children: [

@@ -12,7 +12,7 @@ class _RegisterState extends State<Register> {
   @override
   Widget build(BuildContext context) {
     return  Scaffold(
-      appBar: AppBar(),
+      appBar: AppBar(title: Text("التحقق من رقم الجوال")),
       body: Center(
         child: Column(
           children: [

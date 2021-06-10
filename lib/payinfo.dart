@@ -14,7 +14,7 @@ class _PaymentState extends State<Payinfo> {
   @override
   Widget build(BuildContext context) {
     return  Scaffold(
-      appBar: AppBar(),
+      appBar: AppBar(title: Text("بيانات الدفع")),
       body: Center(
         child: Column(
           children: [

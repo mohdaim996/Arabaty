@@ -25,7 +25,7 @@ class _MapViewState extends State<MapView> {
   Widget build(BuildContext context) {
     print(main.userPositon);
     return Scaffold(
-        appBar: AppBar(),
+        appBar: AppBar(title: Text("خريطة العربات الإلكترونية"),),
         body: Center(
             child: Stack(
           children: [
