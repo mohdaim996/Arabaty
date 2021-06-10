@@ -1,11 +1,10 @@
 import 'dart:ui';
 
 import 'package:flutter/material.dart';
-import 'homePage.dart' as home;
-
+import 'components.dart' as Arabaty;
 
 class Payment extends StatefulWidget {
-  const Payment({ Key? key }) : super(key: key);
+  const Payment({Key? key}) : super(key: key);
 
   @override
   _PaymentState createState() => _PaymentState();
@@ -14,68 +13,129 @@ class Payment extends StatefulWidget {
 class _PaymentState extends State<Payment> {
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(),
-      body: Center(
-        child: Column(
-          children: [
-            Container(
-              child: Text(r"صفحة الدفع"),
-              alignment: Alignment.center,
-              decoration: BoxDecoration(
-                  color: Colors.grey,
-                  borderRadius: BorderRadius.circular(50.0)),
-              
-              width: 100,
-            ),
-             Text(r"الرجاء إختيار طريقة الدفع"),
-              Padding(child: imageButton("assets/mada.png", context,'/payinfo'),padding: EdgeInsets.all(5),),
-              Padding(child: imageButton("assets/visa.png", context,'/payinfo'),padding: EdgeInsets.all(5)), 
-              Padding(child: imageButton("assets/stcpay.png", context,'/payinfo'),padding: EdgeInsets.all(5)),
-              Padding(child: imageButton("assets/applepay.png", context,'/payinfo'),padding: EdgeInsets.all(5)),
-              Padding (child: Container(
-          margin: EdgeInsets.only(bottom: 10),
-          alignment: Alignment.bottomCenter,
-          child:  Text("عربتي",
-          style: TextStyle(fontWeight: FontWeight.bold,fontSize: 25),
-        ),
-          height: 200,
-        ),padding: EdgeInsets.only(top:150),)
-            //input form field 2,
-            //login button,
-            //creat account
-          ],
-        ),
+    return Arabaty.ScaffoldTemplateWithAppBar("صفحة الدفع", _body.call());
+  }
+
+  Widget _body() {
+    return Center(
+      child: Column(
+        children: [
+          Container(
+            //DRY
+            child: Text(r"صفحة الدفع"),
+            alignment: Alignment.center,
+            decoration: BoxDecoration(
+                color: Colors.grey, borderRadius: BorderRadius.circular(50.0)),
+            width: 100,
+          ),
+          Text(r"الرجاء إختيار طريقة الدفع"),
+          Padding(
+            child: imageButton("assets/mada.png", context, '/payinfo'),
+            padding: EdgeInsets.all(5),
+          ),
+          Padding(
+              child: imageButton("assets/visa.png", context, '/payinfo'),
+              padding: EdgeInsets.all(5)),
+          Padding(
+              child: imageButton("assets/stcpay.png", context, '/payinfo'),
+              padding: EdgeInsets.all(5)),
+          Padding(
+              child: imageButton("assets/applepay.png", context, '/payinfo'),
+              padding: EdgeInsets.all(5)),
+        ],
       ),
     );
   }
 }
 
-class CardInfo extends StatefulWidget {
-  const CardInfo({ Key? key }) : super(key: key);
+class Payinfo extends StatefulWidget {
+  const Payinfo({Key? key}) : super(key: key);
 
   @override
-  _CardInfoState createState() => _CardInfoState();
+  _PayinfoState createState() => _PayinfoState();
 }
 
-class _CardInfoState extends State<CardInfo> {
+class _PayinfoState extends State<Payinfo> {
   @override
   Widget build(BuildContext context) {
-    return Container()
-  ;}
-}
-Widget imageButton(String value, context,String path){
-  return OutlinedButton(
-          onPressed: () => Navigator.pushNamed(context, path,),
-          child: Container(
-            child: Center(
-                child:Image.asset(value,width: 100,height: 100,),),
-            width: 250,
-            height: 75,
+    return Arabaty.ScaffoldTemplateWithAppBar('الدفع', _body.call());
+  }
+
+  Widget _body() {
+    return Center(
+      child: Column(
+        children: [
+          Container(
+            child: Text(r"الدفع"),
+            alignment: Alignment.center,
+            decoration: BoxDecoration(
+                color: Colors.grey, borderRadius: BorderRadius.circular(50.0)),
+            height: 50,
+            width: 100,
           ),
-          style: OutlinedButton.styleFrom(
-              backgroundColor: Color(0xff01A0C6),
-              shape: RoundedRectangleBorder(
-                  borderRadius: BorderRadius.circular(50.0))),
-        );
+          Text(r"الرجاء إدخال بيانات بطاقة مدى"),
+          Padding(
+            child: TextFormField(
+                decoration: const InputDecoration(
+                    icon: Icon(Icons.format_list_numbered),
+                    hintText: '',
+                    labelText: 'رقم البطاقة *')),
+            padding: EdgeInsets.all(20),
+          ),
+          Padding(
+            child: TextFormField(
+                decoration: const InputDecoration(
+                    icon: Icon(Icons.info_outline),
+                    hintText: '',
+                    labelText: 'الإسم على البطاقة *')),
+            padding: EdgeInsets.all(20),
+          ),
+          Padding(
+            child: TextFormField(
+                decoration: const InputDecoration(
+                    icon: Icon(Icons.date_range),
+                    hintText: '',
+                    labelText: 'تاريخ الإنتهاء *')),
+            padding: EdgeInsets.all(20),
+          ),
+          Padding(
+            child: TextFormField(
+                decoration: const InputDecoration(
+                    icon: Icon(Icons.format_list_numbered),
+                    hintText: '- - -',
+                    labelText: 'ccv *')),
+            padding: EdgeInsets.all(20),
+          ),
+          Padding(
+            child: Arabaty.langButton('الدفع', context, '/home'),
+            padding: EdgeInsets.all(5),
+          ),
+        ],
+      ),
+    );
+  }
+}
+
+Widget imageButton(String value, context, String path) {
+  return OutlinedButton(
+    onPressed: () => Navigator.pushNamed(
+      context,
+      path,
+    ),
+    child: Container(
+      child: Center(
+        child: Image.asset(
+          value,
+          width: 100,
+          height: 100,
+        ),
+      ),
+      width: 250,
+      height: 75,
+    ),
+    style: OutlinedButton.styleFrom(
+        backgroundColor: Color(0xff01A0C6),
+        shape:
+            RoundedRectangleBorder(borderRadius: BorderRadius.circular(50.0))),
+  );
 }

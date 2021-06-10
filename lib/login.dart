@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'homePage.dart' as home;
+import 'components.dart' as Arabaty;
 
 class Login extends StatefulWidget {
   const Login({Key? key}) : super(key: key);
@@ -11,9 +11,12 @@ class Login extends StatefulWidget {
 class _LoginState extends State<Login> {
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(),
-      body: Center(
+    return Arabaty.ScaffoldTemplateWithAppBar('تسجيل الدخول', _body.call());
+
+    
+  }
+  Widget _body(){
+    return Center(
         child: Column(
           children: [
             Padding(padding: EdgeInsets.symmetric(vertical: 20),child: Container(
@@ -31,45 +34,20 @@ class _LoginState extends State<Login> {
                 icon: Icon(Icons.phone),
                 hintText: '05',
                 labelText: 'رقم الجوال الخاص بك *')),padding: EdgeInsets.all(30) ,),
-                Padding(child: home.langButton("التسجيل الآن", context,'/register'),padding: EdgeInsets.all(5),),
-              Padding(child: newuserButton("إنشاء حساب", context),padding: EdgeInsets.only(bottom:200)), 
-              Container(
-          alignment: Alignment.bottomCenter,
-          child:  Text("عربتي",
-          style: TextStyle(fontWeight: FontWeight.bold,fontSize: 25),
-        ),
-          height: 200,
-        ),
+                Padding(child: Arabaty.langButton("التسجيل الآن", context,'/ceck'),padding: EdgeInsets.all(5),),
+              Padding(child: Arabaty.langButton("إنشاء حساب", context,'/register'),padding: EdgeInsets.only(bottom:200)), 
+              
             //input form field 2,
             //login button,
             //creat account
           ],
         ),
-      ),
-    );
+      );
   }
 }
 Widget logButton(String value, context){
   return OutlinedButton(
           onPressed: () => Navigator.pushNamed(context, '/register'),
-          child: Container(
-            child: Center(
-                child: Text(
-              value,
-              style: TextStyle(color: Colors.white, fontSize: 30),
-            )),
-            width: 250,
-            height: 75,
-          ),
-          style: OutlinedButton.styleFrom(
-              backgroundColor: Color(0xff01A0C6),
-              shape: RoundedRectangleBorder(
-                  borderRadius: BorderRadius.circular(50.0))),
-        );
-}
-Widget newuserButton(String value, context){
-  return OutlinedButton(
-          onPressed: () => Navigator.pushNamed(context, '/ceck'),
           child: Container(
             child: Center(
                 child: Text(

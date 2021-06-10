@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
+import 'components.dart' as Arabaty;
 
 class MyHomePage extends StatefulWidget {
-  MyHomePage({required this.title}) ;
-
+  MyHomePage({required this.title});
 
   final String title;
 
@@ -13,81 +13,31 @@ class MyHomePage extends StatefulWidget {
 class _MyHomePageState extends State<MyHomePage> {
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-        body: Center(
-            child: Column(
+    return Arabaty.ScaffoldTemplate(_body.call());
+  }
+
+  Widget _body() {
+    return Center(
+        child: Column(
       mainAxisAlignment: MainAxisAlignment.spaceEvenly,
       children: [
         Container(
           height: 50,
-        ),Icon(Icons.wheelchair_pickup,size: 120,color: Color(0xff01A0C6), ),
-        langText(r'إختار اللغة'),
-        langText('Choose Language'),
+        ),
+        Icon(
+          Icons.wheelchair_pickup,
+          size: 120,
+          color: Color(0xff01A0C6),
+        ), //get logo
+        Arabaty.langText(r'إختار اللغة'),
+        Arabaty.langText('Choose Language'),
         Container(
           height: 10,
         ),
-        langButton('العربية',context,'/login'),
-        langButton('English',context, '/login'),
-        testqr(r'Español',context,'/qrcode'),
-        Container(
-          margin: EdgeInsets.only(bottom: 10),
-          alignment: Alignment.bottomCenter,
-          child:  Text(
-          widget.title,
-          style: TextStyle(fontWeight: FontWeight.bold,fontSize: 25),
-        ),
-          height: 200,
-        ),
+        Arabaty.langButton('العربية', context, '/login'),
+        Arabaty.langButton('English', context, '/login'),
+        Arabaty.langButton(r'Español', context, '/qrcode'),
       ],
-    )));
+    ));
   }
-}
-
-
-Widget langText(String value){
-  return Text(
-          value,
-          style: TextStyle(
-              fontSize: 30,
-              fontFamily: 'Pragmatica',
-              color: Color(0xff616668),
-              fontWeight: FontWeight.bold),
-        );
-}
-
-Widget langButton(String value, context,String path){
-  return OutlinedButton(
-          onPressed: () => Navigator.pushNamed(context, path),
-          child: Container(
-            child: Center(
-                child: Text(
-              value,
-              style: TextStyle(color: Colors.white, fontSize: 30),
-            )),
-            width: 250,
-            height: 75,
-          ),
-          style: OutlinedButton.styleFrom(
-              backgroundColor: Color(0xff01A0C6),
-              shape: RoundedRectangleBorder(
-                  borderRadius: BorderRadius.circular(50.0))),
-        );
-}
-Widget testqr(String value, context,String path){
-  return OutlinedButton(
-          onPressed: () => Navigator.pushNamed(context, path),
-          child: Container(
-            child: Center(
-                child: Text(
-              value,
-              style: TextStyle(color: Colors.white, fontSize: 30),
-            )),
-            width: 250,
-            height: 75,
-          ),
-          style: OutlinedButton.styleFrom(
-              backgroundColor: Color(0xff01A0C6),
-              shape: RoundedRectangleBorder(
-                  borderRadius: BorderRadius.circular(50.0))),
-        );
 }
