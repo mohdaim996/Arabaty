@@ -11,10 +11,15 @@ import 'package:flutter/material.dart';
 import 'qrcode.dart';
 import 'homePage.dart';
 import 'package:geolocator/geolocator.dart';
+import 'package:flutter/services.dart';
 
 dynamic userPositon;
 void main(List<String> args) async {
-  
+  WidgetsFlutterBinding.ensureInitialized();
+  SystemChrome.setPreferredOrientations([
+    DeviceOrientation.portraitUp,
+    DeviceOrientation.portraitDown,
+  ]);
   runApp(MyApp());
   userPositon = await Geolocator.getCurrentPosition();
   print(userPositon);
