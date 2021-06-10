@@ -90,7 +90,7 @@ class _MapViewState extends State<MapView> {
                 top: 20,
                 left: ((MediaQuery.of(context).size.width) / 2) - 60),
             Positioned(
-                child: home.langButton('التالي', context, '/payment'),
+                child: home.testqr('التالي', context, '/qrcode'),
                 bottom: 20,
                 left: ((MediaQuery.of(context).size.width) / 2) - 133),
           ],

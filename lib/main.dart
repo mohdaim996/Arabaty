@@ -8,6 +8,7 @@ import 'package:arabaty/payment.dart';
 import 'package:arabaty/register.dart';
 import 'package:arabaty/ceck.dart';
 import 'package:flutter/material.dart';
+import 'renthours.dart';
 import 'qrcode.dart';
 import 'homePage.dart';
 import 'package:geolocator/geolocator.dart';
@@ -40,6 +41,7 @@ class MyApp extends StatelessWidget {
         '/maps': (BuildContext context) => new MapView(),
         '/qrcode': (BuildContext context) => new QRScanPage(),
         '/cartInfo': (BuildContext context) => new CartInfo(),
+        '/renthours': (BuildContext context) => new RentHours(),
       },
       title: 'Arabaty',
       theme: ThemeData(
