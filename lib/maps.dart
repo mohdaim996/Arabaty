@@ -73,6 +73,28 @@ class _MapViewState extends State<MapView> {
                   builder: (ctx) => Container(
                     child: Icon(Icons.pin_drop),
                   ),
+                ),
+                Marker(
+                  width: 80.0,
+                  height: 80.0,
+                  point: LatLng(
+                      (main.userPositon.latitude + doubleInRange(0, 0.0399999)),
+                      (main.userPositon.longitude +
+                          doubleInRange(0, 0.0399999))),
+                  builder: (ctx) => Container(
+                    child: Icon(Icons.pin_drop),
+                  ),
+                ),
+                Marker(
+                  width: 80.0,
+                  height: 80.0,
+                  point: LatLng(
+                      (main.userPositon.latitude + doubleInRange(0, 0.0399999)),
+                      (main.userPositon.longitude +
+                          doubleInRange(0, 0.0399999))),
+                  builder: (ctx) => Container(
+                    child: Icon(Icons.pin_drop),
+                  ),
                 )
               ],
             ),
@@ -96,7 +118,7 @@ class _MapViewState extends State<MapView> {
             left: ((MediaQuery.of(context).size.width) / 2) - 60),
         Positioned(
             child:
-                Arabaty.startScanner('التالي', context, '/payment', scanQRCode),
+                Arabaty.startScanner('التالي', context, '/renthours', scanQRCode),
             bottom: 20,
             left: ((MediaQuery.of(context).size.width) / 2) - 133),
       ],
@@ -109,10 +131,10 @@ class _MapViewState extends State<MapView> {
       if (!mounted) return;
 
       setState(() {
-        Navigator.pushNamed(context, '/payment');
+        Navigator.pushNamed(context, '/renthours');
       });
     } catch( PlatformException) {
-       Navigator.pushNamed(context, '/payment');
+       Navigator.pushNamed(context, '/renthours');
     }
   }
 }
