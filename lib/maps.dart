@@ -1,5 +1,6 @@
 import 'dart:async';
 import 'package:flutter/material.dart';
+import 'package:flutter_barcode_scanner/flutter_barcode_scanner.dart';
 import 'package:flutter_map/flutter_map.dart';
 import "package:latlong2/latlong.dart";
 import 'main.dart' as main;
@@ -117,8 +118,8 @@ class _MapViewState extends State<MapView> {
             top: 20,
             left: ((MediaQuery.of(context).size.width) / 2) - 60),
         Positioned(
-            child:
-                Arabaty.startScanner('التالي', context, '/renthours', scanQRCode),
+            child: Arabaty.startScanner(
+                'التالي', context, '/renthours', scanQRCode),
             bottom: 20,
             left: ((MediaQuery.of(context).size.width) / 2) - 133),
       ],
@@ -126,15 +127,18 @@ class _MapViewState extends State<MapView> {
   }
 
   Future<void> scanQRCode() async {
-    try {
+    String barcodeScanRes;
 
+    try {
+      barcodeScanRes = await FlutterBarcodeScanner.scanBarcode(
+          '#ff6666', 'Cancel', true, ScanMode.QR);
       if (!mounted) return;
 
       setState(() {
         Navigator.pushNamed(context, '/renthours');
       });
-    } catch( PlatformException) {
-       Navigator.pushNamed(context, '/renthours');
+    } catch (PlatformException) {
+      Navigator.pushNamed(context, '/renthours');
     }
   }
 }
