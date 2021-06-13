@@ -1,8 +1,7 @@
-import 'dart:js';
-import 'dart:math';
 import 'package:flutter/material.dart';
 import 'components.dart' as Arabaty;
 import 'cartInfo.dart';
+import 'dart:math';
 class Payend extends StatefulWidget {
   const Payend({ Key? key }) : super(key: key);
 
