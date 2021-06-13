@@ -37,10 +37,13 @@ class _PaymentState extends State<Payment> {
               child: imageButton("assets/visa.png", context, '/payinfo'),
               padding: EdgeInsets.all(5)),
           Padding(
-              child: imageButton("assets/stcpay.png", context, '/payinfo'),
+              child: imageButton("assets/stcpay.png", context, ''),
               padding: EdgeInsets.all(5)),
           Padding(
-              child: imageButton("assets/applepay.png", context, '/payinfo'),
+              child: imageButton("assets/applepay.png", context, ''),
+              padding: EdgeInsets.all(5)),
+          Padding(
+              child: imageButton("assets/nfc.png", context, ''),
               padding: EdgeInsets.all(5)),
         ],
       ),

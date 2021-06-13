@@ -24,19 +24,17 @@ class _MyHomePageState extends State<MyHomePage> {
         Container(
           height: 50,
         ),
-        Icon(
-          Icons.wheelchair_pickup,
-          size: 120,
-          color: Color(0xff01A0C6),
-        ), //get logo
+        Padding(
+              child:Image.asset ("arabatylogo.jpg",height: 300,width: 500,),
+              padding: EdgeInsets.all(0)),
         Arabaty.langText(r'إختار اللغة'),
         Arabaty.langText('Choose Language'),
         Container(
           height: 10,
         ),
         Arabaty.langButton('العربية', context, '/login'),
-        Arabaty.langButton('English', context, '/login'),
-        Arabaty.langButton(r'Español', context, '/qrcode'),
+        Arabaty.langButton('English', context, ''),
+        Arabaty.langButton(r'Español', context, ''),
       ],
     ));
   }

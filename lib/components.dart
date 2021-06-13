@@ -5,8 +5,10 @@ Widget ScaffoldTemplateWithAppBar(String title, Widget body) {
       extendBody: true,
       bottomSheet: myLogo,
       appBar: AppBar(
+        backgroundColor:Color(0xff01A0C6),
         title: Center(
           child: Text(title),
+          
         ),
       ),
       body: body);
