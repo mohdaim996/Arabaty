@@ -25,8 +25,12 @@ class _MyHomePageState extends State<MyHomePage> {
           height: 50,
         ),
         Padding(
-              child:Image.asset ("arabatylogo.jpg",height: 300,width: 500,),
-              padding: EdgeInsets.all(0)),
+            child: Image.asset(
+              "assets/arabatylogo.jpg",
+              height: 100,
+              width: 200,
+            ),
+            padding: EdgeInsets.all(0)),
         Arabaty.langText(r'إختار اللغة'),
         Arabaty.langText('Choose Language'),
         Container(
