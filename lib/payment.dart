@@ -42,6 +42,9 @@ class _PaymentState extends State<Payment> {
           Padding(
               child: imageButton("assets/applepay.png", context, '/payinfo'),
               padding: EdgeInsets.all(5)),
+          Padding(
+              child: imageButton("assets/nfc.png", context, '/payinfo'),
+              padding: EdgeInsets.all(5)),
         ],
       ),
     );
