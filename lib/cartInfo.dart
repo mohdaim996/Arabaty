@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'components.dart' as Arabaty;
 import 'dart:math';
 
-int id = 0;
+int id = 1;
 int battery = 100;
 int time = 12;
 
