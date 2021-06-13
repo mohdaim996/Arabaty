@@ -6,7 +6,7 @@ import 'package:arabaty/register.dart';
 import 'package:arabaty/ceck.dart';
 import 'package:flutter/material.dart';
 import 'renthours.dart';
-
+import 'package:arabaty/payinfo.dart';
 import 'homePage.dart';
 import 'package:geolocator/geolocator.dart';
 import 'package:flutter/services.dart';
@@ -36,7 +36,7 @@ class MyApp extends StatelessWidget {
         '/login': (BuildContext context) => new Login(),
         '/register': (BuildContext context) => new Register(),
         '/maps': (BuildContext context) => new MapView(),
-
+        '/payend': (BuildContext context) => new Payend(),
         '/renthours': (BuildContext context) => new RentHours(),
       },
       title: 'Arabaty',

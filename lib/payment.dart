@@ -110,7 +110,7 @@ class _PayinfoState extends State<Payinfo> {
             padding: EdgeInsets.all(20),
           ),
           Padding(
-            child: Arabaty.langButton('الدفع', context, '/home'),
+            child: Arabaty.langButton('الدفع', context, '/payend'),
             padding: EdgeInsets.all(5),
           ),
         ],
