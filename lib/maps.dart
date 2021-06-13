@@ -50,7 +50,7 @@ class _MapViewState extends State<MapView> {
                       (main.userPositon.longitude +
                           doubleInRange(0, 0.0399999))),
                   builder: (ctx) => Container(
-                    child: Icon(Icons.pin_drop),
+                    child: Row(children:[Icon(Icons.pin_drop,color: Colors.red),Icon(Icons.battery_charging_full,color: Colors.green,)]) ,
                   ),
                 ),
                 Marker(
@@ -61,7 +61,7 @@ class _MapViewState extends State<MapView> {
                       (main.userPositon.longitude +
                           doubleInRange(0, 0.0399999))),
                   builder: (ctx) => Container(
-                    child: Icon(Icons.pin_drop),
+                    child: Row(children:[Icon(Icons.pin_drop,color: Colors.red),Icon(Icons.battery_charging_full,color: Colors.green,)]) ,
                   ),
                 ),
                 Marker(
@@ -72,7 +72,7 @@ class _MapViewState extends State<MapView> {
                       (main.userPositon.longitude +
                           doubleInRange(0, 0.0399999))),
                   builder: (ctx) => Container(
-                    child: Icon(Icons.pin_drop),
+                    child: Row(children:[Icon(Icons.pin_drop,color: Colors.red),Icon(Icons.battery_charging_full,color: Colors.green,)]) ,
                   ),
                 ),
                 Marker(
@@ -83,7 +83,7 @@ class _MapViewState extends State<MapView> {
                       (main.userPositon.longitude +
                           doubleInRange(0, 0.0399999))),
                   builder: (ctx) => Container(
-                    child: Icon(Icons.pin_drop),
+                    child: Row(children:[Icon(Icons.pin_drop,color: Colors.red),Icon(Icons.battery_charging_full,color: Colors.green,)]) ,
                   ),
                 ),
                 Marker(
@@ -94,7 +94,7 @@ class _MapViewState extends State<MapView> {
                       (main.userPositon.longitude +
                           doubleInRange(0, 0.0399999))),
                   builder: (ctx) => Container(
-                    child: Icon(Icons.pin_drop),
+                    child: Row(children:[Icon(Icons.pin_drop,color: Colors.red),Icon(Icons.battery_charging_full,color: Colors.green,)]) ,
                   ),
                 )
               ],
