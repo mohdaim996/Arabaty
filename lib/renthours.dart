@@ -24,13 +24,13 @@ class _RentHoursState extends State<RentHours> {
               
               width: 100,
             ),),
-             Text(r"ربع ساعة              5 ريال"),
+             Text(r"ربع ساعة              12.5 ريال"),
               Padding(child: imageButton("assets/testmin.png", context,'/payment'),padding: EdgeInsets.all(5),),
-               Text(r"نصف ساعة           10 ريال"),
+               Text(r"نصف ساعة           25 ريال"),
               Padding(child: imageButton("assets/testmin.png", context,'/payment'),padding: EdgeInsets.all(5),),
-              Text(r"ساعة                20 ريال"),
+              Text(r"ساعة                50 ريال"),
               Padding(child: imageButton("assets/testmin.png", context,'/payment'),padding: EdgeInsets.all(5),),
-              Text(r"ساعتين                40 ريال"),
+              Text(r"ساعتين                100 ريال"),
               Padding(child: imageButton("assets/testmin.png", context,'/payment'),padding: EdgeInsets.all(5),),
               Container(
           alignment: Alignment.bottomCenter,
