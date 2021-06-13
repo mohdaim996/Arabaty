@@ -6,6 +6,8 @@ import "package:latlong2/latlong.dart";
 import 'main.dart' as main;
 import 'dart:math';
 import 'components.dart' as Arabaty;
+import 'dart:convert';
+import 'cartInfo.dart' as Cart;
 
 class MapView extends StatefulWidget {
   const MapView({Key? key}) : super(key: key);
@@ -133,12 +135,16 @@ class _MapViewState extends State<MapView> {
       barcodeScanRes = await FlutterBarcodeScanner.scanBarcode(
           '#ff6666', 'Cancel', true, ScanMode.QR);
       if (!mounted) return;
+      var map = json.decode(barcodeScanRes);
 
       setState(() {
-        Navigator.pushNamed(context, '/renthours');
+        Cart.id = map['id'];
+        Cart.battery = map['battery'];
+        Cart.time = map['time'];
+        Navigator.pushNamed(context, '/cart');
       });
     } catch (PlatformException) {
-      Navigator.pushNamed(context, '/renthours');
+      Navigator.pushNamed(context, '/cart');
     }
   }
 }

@@ -61,6 +61,7 @@ Widget langButton(String value, context, String path) {
       height: 75,
     ),
     style: OutlinedButton.styleFrom(
+        elevation:5,
         backgroundColor: Color(0xff01A0C6),
         shape:
             RoundedRectangleBorder(borderRadius: BorderRadius.circular(50.0))),
