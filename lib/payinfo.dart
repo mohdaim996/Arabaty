@@ -1,5 +1,3 @@
-import 'dart:js';
-
 import 'package:flutter/material.dart';
 import 'components.dart' as Arabaty;
 class Payend extends StatefulWidget {

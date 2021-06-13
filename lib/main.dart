@@ -39,6 +39,7 @@ class MyApp extends StatelessWidget {
         '/maps': (BuildContext context) => new MapView(),
         '/payend': (BuildContext context) => new Payend(),
         '/renthours': (BuildContext context) => new RentHours(),
+        '/cart':(BuildContext context)=>new CartInfo()
       },
       title: 'Arabaty',
       theme: ThemeData(
