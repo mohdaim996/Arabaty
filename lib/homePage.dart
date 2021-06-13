@@ -35,8 +35,8 @@ class _MyHomePageState extends State<MyHomePage> {
           height: 10,
         ),
         Arabaty.langButton('العربية', context, '/login'),
-        Arabaty.langButton('English', context, '/login'),
-        Arabaty.langButton(r'Español', context, '/qrcode'),
+        Arabaty.langButton('English', context, ''),
+        Arabaty.langButton(r'Español', context, ''),
       ],
     ));
   }
