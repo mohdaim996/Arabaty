@@ -56,10 +56,10 @@ class _PayendState extends State<Payend> {
             padding: EdgeInsets.all(5),
           ),
           Padding(
-              child: Arabaty.langButton("إضافة وقت", context, ''),
+              child: Arabaty.langButton("إضافة وقت", context, '/renthours'),
               padding: EdgeInsets.all(5)),
           Padding(
-              child: Arabaty.langButton("إضافة عربة أخرى", context, ''),
+              child: Arabaty.langButton("إضافة عربة أخرى", context, '/maps'),
               padding: EdgeInsets.only(top: 5)),
         ],
       ),
