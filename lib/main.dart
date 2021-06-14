@@ -40,6 +40,7 @@ class MyApp extends StatelessWidget {
         '/payend': (BuildContext context) => new Payend(),
         '/renthours': (BuildContext context) => new RentHours(),
         '/cart': (BuildContext context) => new CartInfo(),
+        '/nfc': (BuildContext context) => new NFC()
       },
       title: 'Arabaty',
       theme: ThemeData(

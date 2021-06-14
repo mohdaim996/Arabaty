@@ -34,7 +34,7 @@ class _MapViewState extends State<MapView> {
           options: MapOptions(
             center:
                 LatLng(main.userPositon.latitude, main.userPositon.longitude),
-            zoom: 12.5,
+            zoom: 13.5,
           ),
           layers: [
             TileLayerOptions(
@@ -47,12 +47,13 @@ class _MapViewState extends State<MapView> {
                 Marker(
                   width: 80.0,
                   height: 80.0,
-                  point: LatLng(
-                      (main.userPositon.latitude + doubleInRange(0, 0.0399999)),
-                      (main.userPositon.longitude +
-                          doubleInRange(0, 0.0399999))),
+                  point: LatLng((main.userPositon.latitude),
+                      (main.userPositon.longitude)),
                   builder: (ctx) => Container(
-                    child: Row(children:[Icon(Icons.pin_drop,color: Colors.red),Icon(Icons.battery_charging_full,color: Colors.green,)]) ,
+                    child: Row(children: [
+                      Icon(Icons.person),
+                     
+                    ]),
                   ),
                 ),
                 Marker(
@@ -63,7 +64,13 @@ class _MapViewState extends State<MapView> {
                       (main.userPositon.longitude +
                           doubleInRange(0, 0.0399999))),
                   builder: (ctx) => Container(
-                    child: Row(children:[Icon(Icons.pin_drop,color: Colors.red),Icon(Icons.battery_charging_full,color: Colors.green,)]) ,
+                    child: Row(children: [
+                      Icon(Icons.pin_drop, color: Colors.red),
+                      Icon(
+                        Icons.battery_charging_full,
+                        color: Colors.green,
+                      )
+                    ]),
                   ),
                 ),
                 Marker(
@@ -74,7 +81,13 @@ class _MapViewState extends State<MapView> {
                       (main.userPositon.longitude +
                           doubleInRange(0, 0.0399999))),
                   builder: (ctx) => Container(
-                    child: Row(children:[Icon(Icons.pin_drop,color: Colors.red),Icon(Icons.battery_charging_full,color: Colors.green,)]) ,
+                    child: Row(children: [
+                      Icon(Icons.pin_drop, color: Colors.red),
+                      Icon(
+                        Icons.battery_charging_full,
+                        color: Colors.green,
+                      )
+                    ]),
                   ),
                 ),
                 Marker(
@@ -85,7 +98,13 @@ class _MapViewState extends State<MapView> {
                       (main.userPositon.longitude +
                           doubleInRange(0, 0.0399999))),
                   builder: (ctx) => Container(
-                    child: Row(children:[Icon(Icons.pin_drop,color: Colors.red),Icon(Icons.battery_charging_full,color: Colors.green,)]) ,
+                    child: Row(children: [
+                      Icon(Icons.pin_drop, color: Colors.red),
+                      Icon(
+                        Icons.battery_charging_full,
+                        color: Colors.green,
+                      )
+                    ]),
                   ),
                 ),
                 Marker(
@@ -96,7 +115,30 @@ class _MapViewState extends State<MapView> {
                       (main.userPositon.longitude +
                           doubleInRange(0, 0.0399999))),
                   builder: (ctx) => Container(
-                    child: Row(children:[Icon(Icons.pin_drop,color: Colors.red),Icon(Icons.battery_charging_full,color: Colors.green,)]) ,
+                    child: Row(children: [
+                      Icon(Icons.pin_drop, color: Colors.red),
+                      Icon(
+                        Icons.battery_charging_full,
+                        color: Colors.green,
+                      )
+                    ]),
+                  ),
+                ),
+                Marker(
+                  width: 80.0,
+                  height: 80.0,
+                  point: LatLng(
+                      (main.userPositon.latitude + doubleInRange(0, 0.0399999)),
+                      (main.userPositon.longitude +
+                          doubleInRange(0, 0.0399999))),
+                  builder: (ctx) => Container(
+                    child: Row(children: [
+                      Icon(Icons.pin_drop, color: Colors.red),
+                      Icon(
+                        Icons.battery_charging_full,
+                        color: Colors.green,
+                      )
+                    ]),
                   ),
                 )
               ],
@@ -110,7 +152,7 @@ class _MapViewState extends State<MapView> {
               child: Container(
                 child: Text(r"المحطات المتوفرة"),
                 alignment: Alignment.center,
-                decoration: BoxDecoration(
+                decoration: BoxDecoration( 
                     color: Colors.grey,
                     borderRadius: BorderRadius.circular(50.0)),
                 height: 30,

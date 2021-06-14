@@ -43,7 +43,7 @@ class _PaymentState extends State<Payment> {
               child: imageButton("assets/applepay.png", context, ''),
               padding: EdgeInsets.all(5)),
           Padding(
-              child: imageButton("assets/nfc.png", context, ''),
+              child: imageButton("assets/nfc.png", context, '/nfc'),
               padding: EdgeInsets.all(5)),
         ],
       ),
@@ -141,4 +141,22 @@ Widget imageButton(String value, context, String path) {
         shape:
             RoundedRectangleBorder(borderRadius: BorderRadius.circular(50.0))),
   );
+}
+
+class NFC extends StatelessWidget {
+  const NFC({Key? key}) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    return Arabaty.ScaffoldTemplateWithAppBar('NFC', _body.call());
+  }
+
+  Widget _body() {
+    return Center(
+      child: Padding(
+        child: Arabaty.langText('مرر هاتفك على القارىء'),
+        padding: EdgeInsets.only(top: 50),
+      ),
+    );
+  }
 }
